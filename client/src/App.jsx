@@ -103,7 +103,7 @@ export default function AtelierFormareHome() {
 
               <a 
               href="#"
-              className = "text-[12px] pl-4 uppercase tracking-[0.22em] text-[#3a3a3a]"
+              className = "text-[12px] pl-2 uppercase tracking-[0.22em] text-[#3a3a3a]"
               >
                  Interior Design Studio
               </a>
