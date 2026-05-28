@@ -10,6 +10,7 @@ const instagram_link = "https://www.instagram.com/atelierformare?igsh=cjVnc2JyNm
 const facebook_link = "";
 const pinterest_link = "";
 
+const local_work_locations_list = "all areas in the state of Colorado such as: Aspen, Vail, Telluride, Cherry Hills, Castle Pines, Greenwood Village, Lone Tree, Superior, Louisville, Boulder, Golden, Denver, Longmont, Loveland, Fort Collins, "
 
 const colors = {
   ink: "#3a3a3a",
@@ -68,7 +69,7 @@ export default function AtelierFormareHome() {
 
     <Helmet>
         <title>
-          Atelier Formare | Interior Design Studio in Northern Colorado
+          Atelier Formare | Interior Design Studio in Colorado
         </title>
 
         <meta
@@ -114,9 +115,13 @@ export default function AtelierFormareHome() {
                 About
               </a>
 
-              <a href="#contact" className="hover:text-[#6e2c2c]">
+              <button
+                type="button"
+                onClick={() => setShowInquiryForm(true)}
+                className="cursor-pointer bg-transparent border-none p-0 uppercase tracking-[0.14em] text-[12px] text-black/65 hover:text-[#6e2c2c] transition-colors"
+              >
                 Contact
-              </a>
+              </button>
             </nav>
 
             <div className="hidden md:block">
@@ -154,9 +159,9 @@ export default function AtelierFormareHome() {
               </motion.h1>
 
               <p className="mt-5 max-w-xl text-base leading-7 text-black/65">
-                Atelier Formare is a Northern Colorado interior design studio specializing in modern,
-                warm, European-inspired residential interiors throughout Colorado (Denver, Boulder, Golden, Fort Collins, Loveland) 
-                and beyond.
+                Atelier Formare is a Colorado interior design studio specializing in modern,
+                warm, European-inspired residential interiors serving in-person {local_work_locations_list}
+                and worldwide through virtual interior design consultations.
               </p>
 
               <div className="mt-7 flex flex-wrap gap-3">
@@ -251,7 +256,7 @@ export default function AtelierFormareHome() {
               </p>
 
               <h2 className="mt-3 max-w-2xl text-3xl font-medium tracking-[-0.04em] md:text-5xl">
-                TODO: Create own. Quiet, comfortable spaces with character.
+                Create own. Quiet, comfortable spaces with character.
               </h2>
             </div>
 
@@ -360,10 +365,10 @@ export default function AtelierFormareHome() {
             {/* SEO / LOWER FOOTER */}
             <div className="mt-12 border-t border-white/15 pt-6">
               <p className="max-w-3xl text-sm leading-relaxed text-white/60">
-                Atelier Formare is a Northern Colorado interior design studio
+                Atelier Formare is a Colorado interior design studio
                 specializing in modern, warm, European-inspired residential interiors.
-                Serving Fort Collins, Loveland, Windsor, Timnath, Denver, Boulder,
-                and clients nationwide through virtual interior design consultations.
+                Serving locally {local_work_locations_list}
+                as well as clients worldwide through virtual interior design consultations.
               </p>
 
               <p className="mt-6 text-xs uppercase tracking-[0.18em] text-white/40">
@@ -394,7 +399,7 @@ export default function AtelierFormareHome() {
               </button>
 
               <p className="text-[13px] uppercase tracking-[0.28em] text-[#6e2c2c]">
-                Start an Inquiry
+                Contact
               </p>
 
               <h2 className="mt-3 max-w-xl text-3xl font-medium tracking-[-0.04em]">
