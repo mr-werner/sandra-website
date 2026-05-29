@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { ArrowRight, Menu } from "lucide-react";
 import { motion } from "framer-motion";
 import logo from "./assets/Atelier-Formare-Colorado-Interior-Design-Logo.png";
+import logo_white from "./assets/Atelier-Formare-Colorado-Interior-Design-Logo-White.png";
 import headshot from "./assets/Colorado-Interior-Design-Premiere-Consultant.jpg"
 import { FaFacebook, FaInstagram, FaPinterest } from "react-icons/fa";
 import { Helmet } from "react-helmet-async";
@@ -10,7 +11,7 @@ const instagram_link = "https://www.instagram.com/atelierformare?igsh=cjVnc2JyNm
 const facebook_link = "";
 const pinterest_link = "";
 
-const local_work_locations_list = "all areas in the state of Colorado such as: Aspen, Vail, Telluride, Cherry Hills, Castle Pines, Greenwood Village, Lone Tree, Superior, Louisville, Boulder, Golden, Denver, Longmont, Loveland, Fort Collins, "
+const local_work_locations_list = "Aspen, Vail, Telluride, Cherry Hills, Castle Pines, Greenwood Village, Lone Tree, Superior, Louisville, Boulder, Golden, Denver, Longmont, Loveland, and Fort Collins."
 
 const colors = {
   ink: "#3a3a3a",
@@ -65,9 +66,9 @@ export default function AtelierFormareHome() {
   const [showInquiryForm, setShowInquiryForm] = useState(false);
 
   return (
-<>
+    <>
 
-    <Helmet>
+      <Helmet>
         <title>
           Atelier Formare | Interior Design Studio in Colorado
         </title>
@@ -99,13 +100,13 @@ export default function AtelierFormareHome() {
               href="#"
               className="text-[15px] uppercase tracking-[0.22em] text-[#3a3a3a]"
             >
-              Atelier Formare | 
+              Atelier Formare |
 
-              <a 
-              href="#"
-              className = "text-[12px] pl-2 uppercase tracking-[0.22em] text-[#3a3a3a]"
+              <a
+                href="#"
+                className="text-[12px] pl-2 uppercase tracking-[0.22em] text-[#3a3a3a]"
               >
-                 Interior Design Studio
+                Interior Design Studio
               </a>
 
             </a>
@@ -124,13 +125,10 @@ export default function AtelierFormareHome() {
                 About
               </a>
 
-              <button
-                type="button"
-                onClick={() => setShowInquiryForm(true)}
-                className="cursor-pointer bg-transparent border-none p-0 uppercase tracking-[0.14em] text-[12px] text-black/65 hover:text-[#6e2c2c] transition-colors"
-              >
+              <a href="#contact" className="hover:text-[#6e2c2c]">
                 Contact
-              </button>
+              </a>
+
             </nav>
 
             <div className="hidden md:block">
@@ -169,8 +167,8 @@ export default function AtelierFormareHome() {
 
               <p className="mt-5 max-w-xl text-base leading-7 text-black/65">
                 Atelier Formare is a Colorado interior design studio specializing in modern,
-                warm, European-inspired residential interiors serving in-person {local_work_locations_list}
-                and worldwide through virtual interior design consultations.
+                warm, European-inspired residential interiors serving in-person for many Colorado locations like {local_work_locations_list}
+                As well as worldwide clients through virtual interior design consultations.
               </p>
 
               <div className="mt-7 flex flex-wrap gap-3">
@@ -315,17 +313,17 @@ export default function AtelierFormareHome() {
               </p>
 
               <p className="mt-4 max-w-2xl text-base leading-7 text-black/65">
-                Originally from Germany with a background in aerospace engineering, 
+                Originally from Germany with a background in aerospace engineering,
                 Sandra brings a unique balance of precision, creativity, and human-centered design to every space she touches.
               </p>
 
               <p className="mt-4 max-w-2xl text-base leading-7 text-black/65">
-              Many clients come to her knowing they want something different, but struggling to visualize what that looks like. 
-              Through thoughtful collaboration and an intuitive understanding of personality and lifestyle, she helps bridge the gap between uncertainty and clarity.
+                Many clients come to her knowing they want something different, but struggling to visualize what that looks like.
+                Through thoughtful collaboration and an intuitive understanding of personality and lifestyle, she helps bridge the gap between uncertainty and clarity.
               </p>
-              
+
               <p className="mt-4 max-w-2xl text-base leading-7 text-black/65">
-              The result is a design experience that feels approachable, inspiring, and uniquely tailored to the people living in it.
+                The result is a design experience that feels approachable, inspiring, and uniquely tailored to the people living in it.
               </p>
 
             </div>
@@ -334,15 +332,14 @@ export default function AtelierFormareHome() {
 
         {/* FOOTER */}
 
-       <footer
+        <footer
           id="contact"
           className="bg-[#70745b] px-4 py-12 text-[#f4f1ea] md:px-6"
         >
           <div className="mx-auto max-w-[1180px]">
+            <div className="grid gap-10 md:grid-cols-[1.1fr_0.9fr] md:items-start">
 
-            {/* TOP FOOTER */}
-            <div className="grid gap-8 md:grid-cols-[1fr_auto] md:items-end">
-              
+              {/* LEFT SIDE */}
               <div>
                 <p className="text-[13px] uppercase tracking-[0.28em] text-white/70">
                   Project Inquiries
@@ -351,6 +348,11 @@ export default function AtelierFormareHome() {
                 <h2 className="mt-4 max-w-2xl text-4xl font-medium tracking-[-0.05em] md:text-6xl">
                   Let’s shape the feeling of home.
                 </h2>
+
+                <p className="mt-5 max-w-xl text-sm leading-6 text-white/65">
+                  Atelier Formare is a Colorado interior design studio specializing in
+                  warm, refined, European-inspired residential interiors.
+                </p>
 
                 <button
                   type="button"
@@ -362,31 +364,114 @@ export default function AtelierFormareHome() {
                 </button>
               </div>
 
-              <div>
-                <p className="mb-4 text-xs uppercase tracking-[0.18em] text-white/65">
-                  Follow Along
+              {/* BUSINESS CARD */}
+              <div className="rounded-xl border border-white/15 bg-white/10 p-6 backdrop-blur-sm">
+
+                <p className="text-xs uppercase tracking-[0.22em] text-white/60">
+                  Contact
                 </p>
 
-                <SocialLinks light />
+                {/* LOGO + NAME */}
+                <div className="mt-4 flex items-center gap-4 border-b border-white/15 pb-5">
+
+
+                  {/* LEFT SIDE */}
+                  <div>
+                    <h3 className="text-2xl font-medium tracking-[-0.03em]">
+                      Atelier Formare
+                    </h3>
+
+                    <p className="mt-1 text-sm text-white/60">
+                      Interior Design Studio
+                    </p>
+                  </div>
+
+                  {/* RIGHT SIDE LOGO */}
+                  <div className="flex flex-1 justify-center">
+                    <img
+                      src={logo_white}
+                      alt="Atelier Formare Logo"
+                      className="h-22 w-auto object-contain"
+                    />
+                  </div>
+
+                </div>
+
+                {/* EMAIL + PHONE SIDE BY SIDE */}
+                <div className="mt-6 grid gap-6 sm:grid-cols-2">
+
+                  <div>
+                    <p className="text-xs uppercase tracking-[0.18em] text-white/45">
+                      Email
+                    </p>
+
+                    <a
+                      href="mailto:hello@atelierformare.com"
+                      className="mt-2 block text-sm text-white/80 hover:text-white break-all"
+                    >
+                      hello@atelierformare.com
+                    </a>
+                  </div>
+
+                  <div>
+                    <p className="text-xs uppercase tracking-[0.18em] text-white/45">
+                      Phone
+                    </p>
+
+                    <a
+                      href="tel:+19705551234"
+                      className="mt-2 block text-sm text-white/80 hover:text-white"
+                    >
+                      (970) 555-1234
+                    </a>
+                  </div>
+                </div>
+
+                {/* LOCATION */}
+                <div className="mt-6">
+                  <p className="text-xs uppercase tracking-[0.18em] text-white/45">
+                    Serving
+                  </p>
+
+                  <p className="mt-2 text-sm leading-6 text-white/70">
+                    <span className="font-semibold text-white">
+                      Private Design Consultation: {" "}
+                    </span>
+                    {local_work_locations_list}
+                  </p>
+                  <p className="mt-2 text-sm leading-6 text-white/70">
+                    <span className="font-semibold text-white">
+                      Virutal Design Consultation: {" "}
+                    </span>
+                      Worldwide
+                  </p>
+
+                </div>
+
+                {/* SOCIALS */}
+                <div className="mt-6 flex items-end justify-between">
+
+                  <div>
+                    <p className="mb-4 text-xs uppercase tracking-[0.18em] text-white/45">
+                      Follow Along
+                    </p>
+
+                    <SocialLinks light />
+                  </div>
+
+                  <p className="text-xs uppercase tracking-[0.18em] text-white/40">
+                    © 2026 Atelier Formare
+                  </p>
+
+                </div>
               </div>
+
+
             </div>
-
-            {/* SEO / LOWER FOOTER */}
-            <div className="mt-12 border-t border-white/15 pt-6">
-              <p className="max-w-3xl text-sm leading-relaxed text-white/60">
-                Atelier Formare is a Colorado interior design studio
-                specializing in modern, warm, European-inspired residential interiors.
-                Serving locally {local_work_locations_list}
-                as well as clients worldwide through virtual interior design consultations.
-              </p>
-
-              <p className="mt-6 text-xs uppercase tracking-[0.18em] text-white/40">
-                © 2026 Atelier Formare
-              </p>
-            </div>
-
           </div>
+
         </footer>
+
         {/* INQUIRY MODAL */}
 
         {showInquiryForm && (
@@ -444,7 +529,7 @@ export default function AtelierFormareHome() {
 
                 <input
                   name="Budget"
-                  placeholder="Budget Range" 
+                  placeholder="Budget Range"
                   className="rounded-lg border border-black/15 bg-white/60 p-4"
                 />
 
