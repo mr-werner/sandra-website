@@ -7,6 +7,7 @@ import headshot from "./assets/Colorado-Interior-Design-Premiere-Consultant.jpg"
 import { FaFacebook, FaInstagram, FaPinterest } from "react-icons/fa";
 import { Helmet } from "react-helmet-async";
 
+
 const instagram_link = "https://www.instagram.com/atelierformare?igsh=cjVnc2JyNmsycnBo";
 const facebook_link = "";
 const pinterest_link = "";
@@ -64,6 +65,7 @@ function SocialLinks({ light = false }) {
 
 export default function AtelierFormareHome() {
   const [showInquiryForm, setShowInquiryForm] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
     <>
@@ -135,7 +137,53 @@ export default function AtelierFormareHome() {
               <SocialLinks />
             </div>
 
-            <button className="rounded-md border border-black/15 p-2 md:hidden">
+            {mobileMenuOpen && (
+              <div className="border-t border-black/10 bg-[#f4f1ea] md:hidden">
+                <nav className="flex flex-col px-4 py-4 text-[12px] uppercase tracking-[0.14em] text-black/65">
+                  <a
+                    href="#services"
+                    className="py-3 hover:text-[#6e2c2c]"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    Services
+                  </a>
+
+                  <a
+                    href="#work"
+                    className="py-3 hover:text-[#6e2c2c]"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    Work
+                  </a>
+
+                  <a
+                    href="#about"
+                    className="py-3 hover:text-[#6e2c2c]"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    About
+                  </a>
+
+                  <a
+                    href="#contact"
+                    className="py-3 hover:text-[#6e2c2c]"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    Contact
+                  </a>
+
+                  <div className="pt-4">
+                    <SocialLinks />
+                  </div>
+                </nav>
+              </div>
+            )}
+
+            <button
+              type="button"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="rounded-md border border-black/15 p-2 md:hidden"
+            >
               <Menu size={20} />
             </button>
           </div>
@@ -419,10 +467,10 @@ export default function AtelierFormareHome() {
                     </p>
 
                     <a
-                      href="tel:+19705551234"
+                      href="tel:+17208228497"
                       className="mt-2 block text-sm text-white/80 hover:text-white"
                     >
-                      (970) 555-1234
+                      (720)822-8497
                     </a>
                   </div>
                 </div>
@@ -443,7 +491,7 @@ export default function AtelierFormareHome() {
                     <span className="font-semibold text-white">
                       Virutal Design Consultation: {" "}
                     </span>
-                      Worldwide
+                    Worldwide
                   </p>
 
                 </div>
