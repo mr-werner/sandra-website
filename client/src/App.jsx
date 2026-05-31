@@ -108,7 +108,7 @@ export default function AtelierFormareHome() {
                 href="#"
                 className="text-[12px] pl-2 uppercase tracking-[0.22em] text-[#3a3a3a]"
               >
-                Interior Design 
+                Interior Design
               </a>
 
             </a>
@@ -549,20 +549,69 @@ export default function AtelierFormareHome() {
               </h2>
 
               <form
-                action="mailto:hello@atelierformare.com"
-                method="POST"
-                encType="text/plain"
+                onSubmit={async (e) => {
+                  e.preventDefault();
+
+                  const form = e.currentTarget;
+                  const formData = new FormData(form);
+
+                  const humanCheck = formData.get("humanCheck");
+
+                  if (humanCheck !== "7") {
+                    alert("Please answer the human check correctly.");
+                    return;
+                  }
+
+                  const payload = {
+                    name: formData.get("name"),
+                    email: formData.get("email"),
+                    phone: formData.get("phone"),
+                    budget: formData.get("budget"),
+                    message: formData.get("message"),
+                    humanCheck,
+                    website: formData.get("website"), // honeypot
+                  };
+
+                  try {
+                    const response = await fetch("/api/contact", {
+                      method: "POST",
+                      headers: {
+                        "Content-Type": "application/json",
+                      },
+                      body: JSON.stringify(payload),
+                    });
+
+                    if (!response.ok) {
+                      throw new Error("Failed to send inquiry");
+                    }
+
+                    alert("Thank you! Your inquiry has been sent.");
+                    form.reset();
+                  } catch (error) {
+                    console.error(error);
+                    alert("Something went wrong. Please try again.");
+                  }
+                }}
                 className="mt-6 grid gap-4"
               >
+                {/* Honeypot spam field */}
                 <input
-                  name="Name"
+                  type="text"
+                  name="website"
+                  tabIndex="-1"
+                  autoComplete="off"
+                  className="hidden"
+                />
+
+                <input
+                  name="name"
                   placeholder="Name"
                   required
                   className="rounded-lg border border-black/15 bg-white/60 p-4"
                 />
 
                 <input
-                  name="Email"
+                  name="email"
                   type="email"
                   placeholder="Email"
                   required
@@ -570,29 +619,28 @@ export default function AtelierFormareHome() {
                 />
 
                 <input
-                  name="Phone"
+                  name="phone"
                   placeholder="Phone"
                   className="rounded-lg border border-black/15 bg-white/60 p-4"
                 />
 
                 <input
-                  name="Budget"
+                  name="budget"
                   placeholder="Budget Range"
                   className="rounded-lg border border-black/15 bg-white/60 p-4"
                 />
 
                 <textarea
-                  name="Project Details"
+                  name="message"
                   placeholder="Tell us about your project"
                   required
                   className="min-h-[130px] rounded-lg border border-black/15 bg-white/60 p-4"
                 />
 
-
                 <label className="text-sm text-black/65">
                   Human check: What is 3 + 4?
                   <input
-                    name="Human Check"
+                    name="humanCheck"
                     placeholder="Answer"
                     required
                     pattern="7"
