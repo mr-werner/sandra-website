@@ -268,36 +268,50 @@ export default function AtelierFormareHome() {
               {[
                 {
                   title: "Design Consultation",
-                  text: "A one-time focused consultation assisting with layout, color palettes, furniture & decor, finishes, and styling.",
+                  text: "A one-time focused consultation assisting with layout, color palettes, furniture, decor, finishes, and styling.",
                   details:
-                    "A focused design session for clients who need expert guidance without committing to a larger project. Ideal for layout questions, paint colors, furniture placement, finish selections, decor direction, or helping you make confident decisions before moving forward.",
+                    "Perfect for homeowners who need professional guidance before making decisions. During this consultation we'll discuss layouts, paint colors, furnishings, styling, finishes, lighting, and next steps. You'll leave with expert direction and confidence moving forward."
                 },
                 {
                   title: "Room Refresh",
-                  text: "Make a space simply yours again with intentionality and focused updates for individual rooms using new styling, layout improvements, and layered finishing touches.",
+                  text: "Focused updates for individual rooms using styling, layout improvements, and layered finishing touches.",
                   details:
-                    "A thoughtful update for a room that already has good bones but needs refinement. This may include restyling, updated decor, layout adjustments, accent pieces, lighting suggestions, textiles, art, and finishing touches that make the space feel more complete.",
+                    "Ideal for spaces that need new energy without a complete redesign. We'll refine furniture placement, update decor, incorporate new pieces, improve flow, and add thoughtful finishing touches that make the room feel complete."
                 },
                 {
                   title: "Signature Room Design",
                   text: "A full design experience for clients who want a thoughtful, cohesive, and livable space.",
                   details:
-                    "A more complete design experience for one room from concept to final direction. Together, we define the feeling, function, layout, color palette, furnishings, finishes, and details. You receive a personalized design plan with the guidance needed to bring the space to life.",
+                    "Our most comprehensive room-focused service. Together we'll develop the room's purpose, layout, color palette, furnishings, materials, finishes, lighting, and styling. You'll receive a complete design plan tailored to your lifestyle and aesthetic."
                 },
                 {
                   title: "Designer by the Hour",
-                  text: "No need to feel locked in for an entire project. Expert interior design consulting in a pay-as-you-go format.",
+                  text: "Expert interior design consulting in a flexible pay-as-you-go format.",
                   details:
-                    "Flexible design support billed by the hour. Perfect for clients who want professional input as needed — whether reviewing selections, solving layout challenges, sourcing items, styling shelves, or getting a second opinion before making purchases.",
-                },
+                    "Perfect for clients who need help with specific decisions. Whether you're selecting furniture, reviewing floor plans, choosing finishes, sourcing pieces, or troubleshooting design challenges, you'll receive expert guidance without committing to a larger package."
+                }
               ].map((service) => (
                 <button
                   key={service.title}
                   type="button"
                   onClick={() => setSelectedService(service)}
-                  className="group text-left border-t border-black/15 px-4 py-6 transition-all duration-300 hover:border-[#6e2c2c] hover:bg-[#d8cfc4]/60 focus:outline-none focus:ring-2 focus:ring-[#6e2c2c]/40"
+                  className="
+            group
+            cursor-pointer
+            border-t
+            border-black/15
+            py-6
+            px-4
+            text-left
+            transition-all
+            duration-300
+            hover:-translate-y-1
+            hover:border-[#6e2c2c]
+            hover:bg-[#d8cfc4]/60
+            hover:shadow-lg
+          "
                 >
-                  <h3 className="text-2xl font-medium tracking-[-0.03em] transition-colors group-hover:text-[#6e2c2c]">
+                  <h3 className="text-2xl font-medium tracking-[-0.03em] transition-colors duration-300 group-hover:text-[#6e2c2c]">
                     {service.title}
                   </h3>
 
@@ -305,8 +319,8 @@ export default function AtelierFormareHome() {
                     {service.text}
                   </p>
 
-                  <p className="mt-4 text-[11px] uppercase tracking-[0.18em] text-[#6e2c2c] opacity-0 transition-opacity group-hover:opacity-100">
-                    View details
+                  <p className="mt-4 text-[11px] uppercase tracking-[0.18em] text-[#6e2c2c] opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                    View Details →
                   </p>
                 </button>
               ))}
@@ -314,6 +328,7 @@ export default function AtelierFormareHome() {
           </div>
         </section>
 
+        
         {/* WORK */}
 
         <section id="work" className="px-4 py-14 md:px-6">
@@ -533,9 +548,9 @@ export default function AtelierFormareHome() {
 
         </footer>
 
-        
+
         {/* SERVICES MODAL */}
-        
+
         {selectedService && (
           <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 px-4">
             <div className="relative max-w-xl rounded-xl bg-[#f4f1ea] p-8 shadow-2xl">
