@@ -266,21 +266,21 @@ export default function AtelierFormareHome() {
             <div className="mt-10 grid gap-5 md:grid-cols-2">
               {[
                 {
-                  title: "Full-Service Interior Design",
-                  text: "A complete design experience covering layout, materials, furnishings, decor, and styling from concept through completion.",
+                  title: "Design Consultation",
+                  text: "A one-time focused consultation assisting with layout, color pallettes, furniture & decor, finishes, and styling.",
                 },
                 {
-                  title: "Furniture + Decor Sourcing",
-                  text: "Curated furniture, lighting, textiles, art, and accessories selected to bring warmth and cohesion to your space.",
+                  title: "Room Refresh",
+                  text: "Make a space simply yours again with intentionallity and focused updates for individual rooms using new styling, layout improvements, and layered finishing touches.",
                 },
                 {
-                  title: "Finish Palettes for Remodels",
-                  text: "Thoughtful selections for paint, flooring, tile, cabinetry, hardware, fixtures, and other key remodel finishes.",
+                  title: "Signature Room Design",
+                  text: "A full design experience for clients who want a thoughtful, cohesive, and livable space. Together, we’ll define the feeling, function, layout, colors, furnishings, and finishing details of the room. You’ll receive a personalized design plan with everything you need to bring the space to life — whether virtually through eDesign or locally with in-person support.",
                 },
                 {
-                  title: "Room Refreshes + Styling",
-                  text: "Focused updates for individual rooms using new styling, layout improvements, and layered finishing touches.",
-                },
+                  title: "Designer by the Hour",
+                  text: "No need to feel locked in for an entire project. Expert interior design consulting in a pay as you go format.",
+                }
               ].map((service) => (
                 <article key={service.title} className="border-t border-black/15 py-6">
                   <h3 className="text-2xl font-medium tracking-[-0.03em]">
