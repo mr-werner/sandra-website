@@ -66,6 +66,7 @@ function SocialLinks({ light = false }) {
 export default function AtelierFormareHome() {
   const [showInquiryForm, setShowInquiryForm] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [selectedService, setSelectedService] = useState(null);
 
   return (
     <>
@@ -267,30 +268,47 @@ export default function AtelierFormareHome() {
               {[
                 {
                   title: "Design Consultation",
-                  text: "A one-time focused consultation assisting with layout, color pallettes, furniture & decor, finishes, and styling.",
+                  text: "A one-time focused consultation assisting with layout, color palettes, furniture & decor, finishes, and styling.",
+                  details:
+                    "A focused design session for clients who need expert guidance without committing to a larger project. Ideal for layout questions, paint colors, furniture placement, finish selections, decor direction, or helping you make confident decisions before moving forward.",
                 },
                 {
                   title: "Room Refresh",
-                  text: "Make a space simply yours again with intentionallity and focused updates for individual rooms using new styling, layout improvements, and layered finishing touches.",
+                  text: "Make a space simply yours again with intentionality and focused updates for individual rooms using new styling, layout improvements, and layered finishing touches.",
+                  details:
+                    "A thoughtful update for a room that already has good bones but needs refinement. This may include restyling, updated decor, layout adjustments, accent pieces, lighting suggestions, textiles, art, and finishing touches that make the space feel more complete.",
                 },
                 {
                   title: "Signature Room Design",
-                  text: "A full design experience for clients who want a thoughtful, cohesive, and livable space. Together, we’ll define the feeling, function, layout, colors, furnishings, and finishing details of the room. You’ll receive a personalized design plan with everything you need to bring the space to life — whether virtually through eDesign or locally with in-person support.",
+                  text: "A full design experience for clients who want a thoughtful, cohesive, and livable space.",
+                  details:
+                    "A more complete design experience for one room from concept to final direction. Together, we define the feeling, function, layout, color palette, furnishings, finishes, and details. You receive a personalized design plan with the guidance needed to bring the space to life.",
                 },
                 {
                   title: "Designer by the Hour",
-                  text: "No need to feel locked in for an entire project. Expert interior design consulting in a pay as you go format.",
-                }
+                  text: "No need to feel locked in for an entire project. Expert interior design consulting in a pay-as-you-go format.",
+                  details:
+                    "Flexible design support billed by the hour. Perfect for clients who want professional input as needed — whether reviewing selections, solving layout challenges, sourcing items, styling shelves, or getting a second opinion before making purchases.",
+                },
               ].map((service) => (
-                <article key={service.title} className="border-t border-black/15 py-6">
-                  <h3 className="text-2xl font-medium tracking-[-0.03em]">
+                <button
+                  key={service.title}
+                  type="button"
+                  onClick={() => setSelectedService(service)}
+                  className="group text-left border-t border-black/15 px-4 py-6 transition-all duration-300 hover:border-[#6e2c2c] hover:bg-[#d8cfc4]/60 focus:outline-none focus:ring-2 focus:ring-[#6e2c2c]/40"
+                >
+                  <h3 className="text-2xl font-medium tracking-[-0.03em] transition-colors group-hover:text-[#6e2c2c]">
                     {service.title}
                   </h3>
 
                   <p className="mt-3 max-w-xl text-sm leading-6 text-black/60">
                     {service.text}
                   </p>
-                </article>
+
+                  <p className="mt-4 text-[11px] uppercase tracking-[0.18em] text-[#6e2c2c] opacity-0 transition-opacity group-hover:opacity-100">
+                    View details
+                  </p>
+                </button>
               ))}
             </div>
           </div>
@@ -514,6 +532,46 @@ export default function AtelierFormareHome() {
           </div>
 
         </footer>
+
+        
+        {/* SERVICES MODAL */}
+        
+        {selectedService && (
+          <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 px-4">
+            <div className="relative max-w-xl rounded-xl bg-[#f4f1ea] p-8 shadow-2xl">
+              <button
+                type="button"
+                onClick={() => setSelectedService(null)}
+                className="absolute right-5 top-5 text-2xl leading-none text-black/50 hover:text-[#6e2c2c]"
+              >
+                ×
+              </button>
+
+              <p className="text-[12px] uppercase tracking-[0.24em] text-[#6e2c2c]">
+                Service Details
+              </p>
+
+              <h3 className="mt-4 text-3xl font-medium tracking-[-0.04em]">
+                {selectedService.title}
+              </h3>
+
+              <p className="mt-5 text-base leading-7 text-black/65">
+                {selectedService.details}
+              </p>
+
+              <button
+                type="button"
+                onClick={() => {
+                  setSelectedService(null);
+                  setShowInquiryForm(true);
+                }}
+                className="mt-8 rounded-full bg-[#6e2c2c] px-6 py-3 text-xs uppercase tracking-[0.16em] text-white transition hover:bg-[#5a2323]"
+              >
+                Inquire About This Service
+              </button>
+            </div>
+          </div>
+        )}
 
         {/* INQUIRY MODAL */}
 
