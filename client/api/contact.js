@@ -13,9 +13,9 @@ export default async function handler(req, res) {
             email,
             phone,
             location,
+            projectType,
             budget,
             message,
-            website,
         } = req.body;
 
         // Honeypot spam check
@@ -34,13 +34,13 @@ export default async function handler(req, res) {
         to something like 
         from: "Atelier Formare <inquiries@atelierformare.com>", */
 
-/*         FYI : for testing I must use the account linked to my RESEND account,
-        that being mr.werner@proton.me
-
-        TODO: for the real deployment make sure to change
-        to: mr.werner@proton.me
-        to
-        to: ["hello@atelierformare.com"] */
+        /*         FYI : for testing I must use the account linked to my RESEND account,
+                that being mr.werner@proton.me
+        
+                TODO: for the real deployment make sure to change
+                to: mr.werner@proton.me
+                to
+                to: ["hello@atelierformare.com"] */
 
         const { data, error } = await resend.emails.send({
             from: "Atelier Formare <onboarding@resend.dev>",
@@ -55,6 +55,7 @@ Name: ${name}
 Email: ${email}
 Phone: ${phone || "Not provided"}
 Location: ${location || "Not provided"}
+Project Type: ${projectType || "Not provided"}
 Budget: ${budget || "Not provided"}
 
 

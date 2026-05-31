@@ -56,9 +56,9 @@ function SocialLinks({ light = false }) {
         <FaInstagram style={{ color: iconColor }} />
       </a>
 
-      <a href="https://pinterest.com" target="_blank" rel="noreferrer" aria-label="Pinterest">
+      {/*       <a href="https://pinterest.com" target="_blank" rel="noreferrer" aria-label="Pinterest">
         <FaPinterest style={{ color: iconColor }} />
-      </a>
+      </a> */}
     </div>
   );
 }
@@ -187,7 +187,7 @@ export default function AtelierFormareHome() {
         {/* HERO */}
 
         <section className="px-4 pb-10 pt-20 md:px-6">
-          <div className="mx-auto grid max-w-[1180px] overflow-hidden rounded-xl bg-[#d8cfc4] md:grid-cols-[1.05fr_0.95fr]">
+          <div className="mx-auto grid max-w-[1180px] overflow-hidden rounded-xl bg-[#d8cfc4] md:grid-cols-[1.2fr_0.8fr]">
             <div className="flex flex-col justify-center p-6 md:p-10">
               <img
                 src={logo}
@@ -209,8 +209,8 @@ export default function AtelierFormareHome() {
               </motion.h1>
 
               <p className="mt-5 max-w-xl text-base leading-7 text-black/65">
-                Atelier Formare is a Colorado interior design studio specializing in modern,
-                warm, European-inspired residential interiors serving in-person for many Colorado locations like {local_work_locations_list}
+                Atelier Formare is a Colorado based interior design studio specializing in modern,
+                warm, European/Scandinavian/Mediterranean-inspired residential interiors serving in-person for many Colorado locations like {local_work_locations_list}
                 As well as worldwide clients through virtual interior design consultations.
               </p>
 
@@ -465,7 +465,7 @@ export default function AtelierFormareHome() {
                       href="tel:+17208228497"
                       className="mt-2 block text-sm text-white/80 hover:text-white"
                     >
-                      (720)822-8497
+                      (720) 822-8497
                     </a>
                   </div>
                 </div>
@@ -562,10 +562,11 @@ export default function AtelierFormareHome() {
                     email: formData.get("email"),
                     phone: formData.get("phone"),
                     location: formData.get("location"),
+                    projectType: formData.get("projectType"),
                     budget: formData.get("budget"),
                     message: formData.get("message"),
                     humanCheck,
-                    website: formData.get("website"), // honeypot
+                    website: formData.get("website"),
                   };
 
                   try {
@@ -599,44 +600,85 @@ export default function AtelierFormareHome() {
                   className="hidden"
                 />
 
-                <input
-                  name="name"
-                  placeholder="Name"
-                  required
-                  className="rounded-lg border border-black/15 bg-white/60 p-4"
-                />
+                {/* Two-column fields */}
+                <div className="grid gap-4 md:grid-cols-2">
 
-                <input
-                  name="email"
-                  type="email"
-                  placeholder="Email"
-                  required
-                  className="rounded-lg border border-black/15 bg-white/60 p-4"
-                />
+                  <input
+                    name="name"
+                    placeholder="Name"
+                    required
+                    className="rounded-lg border border-black/15 bg-white/60 p-4"
+                  />
 
-                <input
-                  name="phone"
-                  placeholder="Phone"
-                  className="rounded-lg border border-black/15 bg-white/60 p-4"
-                />
+                  <input
+                    name="email"
+                    type="email"
+                    placeholder="Email"
+                    required
+                    className="rounded-lg border border-black/15 bg-white/60 p-4"
+                  />
 
-                <input
-                  name="location"
-                  placeholder="Location"
-                  className="rounded-lg border border-black/15 bg-white/60 p-4"
-                />
+                  <input
+                    name="phone"
+                    placeholder="Phone"
+                    className="rounded-lg border border-black/15 bg-white/60 p-4"
+                  />
 
-                <input
-                  name="budget"
-                  placeholder="Budget Range"
-                  className="rounded-lg border border-black/15 bg-white/60 p-4"
-                />
+                  <input
+                    name="location"
+                    placeholder="Location"
+                    className="rounded-lg border border-black/15 bg-white/60 p-4"
+                  />
 
+                  <select
+                    name="projectType"
+                    className="rounded-lg border border-black/15 bg-white/60 p-4 text-black/65"
+                  >
+                    <option value="">Project Type</option>
+                    <option value="Full-Service Interior Design">
+                      Full-Service Interior Design
+                    </option>
+                    <option value="Private Design Consultation">
+                      Private Design Consultation
+                    </option>
+                    <option value="Virtual Design Consultation">
+                      Virtual Design Consultation
+                    </option>
+                    <option value="Furnishing & Styling">
+                      Furnishing & Styling
+                    </option>
+                    <option value="New Construction">
+                      New Construction
+                    </option>
+                    <option value="Renovation">
+                      Renovation
+                    </option>
+                    <option value="Not sure yet">
+                      Not sure yet
+                    </option>
+                  </select>
+
+                  <select
+                    name="budget"
+                    className="rounded-lg border border-black/15 bg-white/60 p-4 text-black/65"
+                  >
+                    <option value="">Budget Range</option>
+                    <option value="Under $10,000">Under $10,000</option>
+                    <option value="$10,000–$25,000">$10,000–$25,000</option>
+                    <option value="$25,000–$50,000">$25,000–$50,000</option>
+                    <option value="$50,000–$100,000">$50,000–$100,000</option>
+                    <option value="$100,000+">$100,000+</option>
+                    <option value="Not sure yet">Not sure yet</option>
+                  </select>
+
+                </div>
+
+                {/* Full-width project description */}
                 <textarea
                   name="message"
                   placeholder="Tell us about your project"
                   required
-                  className="min-h-[130px] rounded-lg border border-black/15 bg-white/60 p-4"
+                  className="min-h-[180px] rounded-lg border border-black/15 bg-white/60 p-4"
                 />
 
                 <label className="text-sm text-black/65">
