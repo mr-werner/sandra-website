@@ -34,9 +34,18 @@ export default async function handler(req, res) {
         to something like 
         from: "Atelier Formare <inquiries@atelierformare.com>", */
 
+/*         FYI : for testing I must use the account linked to my RESEND account,
+        that being mr.werner@proton.me
+
+        TODO: for the real deployment make sure to change
+        to: mr.werner@proton.me
+        to
+        to: ["hello@atelierformare.com"] */
+
         const { data, error } = await resend.emails.send({
             from: "Atelier Formare <onboarding@resend.dev>",
-            to: ["hello@atelierformare.com"],
+            // to: ["hello@atelierformare.com"],
+            to: ["mr.werner@proton.me"],
             replyTo: email,
             subject: `New Atelier Formare inquiry from ${name}`,
             text: `
