@@ -12,6 +12,7 @@ export default async function handler(req, res) {
             name,
             email,
             phone,
+            location,
             budget,
             message,
             website,
@@ -44,9 +45,9 @@ New website inquiry
 Name: ${name}
 Email: ${email}
 Phone: ${phone || "Not provided"}
-Project Type: ${projectType || "Not provided"}
-Budget: ${budget || "Not provided"}
 Location: ${location || "Not provided"}
+Budget: ${budget || "Not provided"}
+
 
 Message:
 ${message}

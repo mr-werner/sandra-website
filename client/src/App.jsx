@@ -566,6 +566,7 @@ export default function AtelierFormareHome() {
                     name: formData.get("name"),
                     email: formData.get("email"),
                     phone: formData.get("phone"),
+                    location: formData.get("location"),
                     budget: formData.get("budget"),
                     message: formData.get("message"),
                     humanCheck,
@@ -621,6 +622,12 @@ export default function AtelierFormareHome() {
                 <input
                   name="phone"
                   placeholder="Phone"
+                  className="rounded-lg border border-black/15 bg-white/60 p-4"
+                />
+
+                <input
+                  name="location"
+                  placeholder="Location"
                   className="rounded-lg border border-black/15 bg-white/60 p-4"
                 />
 
