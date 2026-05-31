@@ -210,7 +210,7 @@ export default function AtelierFormareHome() {
 
               <p className="mt-5 max-w-xl text-base leading-7 text-black/65">
                 Atelier Formare is a Colorado based interior design studio specializing in modern,
-                warm, European/Scandinavian/Mediterranean-inspired residential interiors serving in-person for many Colorado locations like {local_work_locations_list}
+                warm, European/Scandinavian/Mediterranean-inspired residential interiors. Locally serving in-person for many Colorado locations like {local_work_locations_list}
                 As well as worldwide clients through virtual interior design consultations.
               </p>
 
@@ -637,12 +637,6 @@ export default function AtelierFormareHome() {
                     <option value="">Project Type</option>
                     <option value="Full-Service Interior Design">
                       Full-Service Interior Design
-                    </option>
-                    <option value="Private Design Consultation">
-                      Private Design Consultation
-                    </option>
-                    <option value="Virtual Design Consultation">
-                      Virtual Design Consultation
                     </option>
                     <option value="Furnishing & Styling">
                       Furnishing & Styling
