@@ -26,13 +26,12 @@ const services = [
     title: "Design Consultation",
     text: "A focused design session for clients who want expert guidance, clarity, and direction before making decisions.",
     summary:
-      "A one-time consultation designed to help you move forward with confidence. This service is ideal when you need professional insight on layout, color, furniture, finishes, styling, or general design direction.",
-    deliverables: [
-      "60–90 minute private consultation",
+      "A one-time consultation designed to help you move forward with confidence. This service is ideal when you need professional insight on layout, color, furniture, styling, and general design direction.",
+    includes: [
+      "Private Consultation",
       "Layout and furniture placement guidance",
-      "Color palette recommendations",
-      "Material, finish, and decor suggestions",
-      "Professional design direction tailored to your space",
+      "Styling and decor direction",
+      "Paint & color palette suggestions",
       "Follow-up notes with key recommendations",
     ],
   },
@@ -41,7 +40,7 @@ const services = [
     text: "Focused updates for individual rooms using styling, layout improvements, and layered finishing touches.",
     summary:
       "A refined refresh for spaces that need new energy without a complete redesign. This service focuses on improving what already exists while introducing thoughtful updates that make the room feel more complete.",
-    deliverables: [
+    includes: [
       "Existing room review",
       "Furniture placement recommendations",
       "Styling and decor direction",
@@ -55,7 +54,7 @@ const services = [
     text: "A full design experience for clients who want a thoughtful, cohesive, and livable space.",
     summary:
       "A comprehensive room-focused design service for clients who want a polished and cohesive space. Every detail is considered, from the room’s purpose and flow to furnishings, finishes, lighting, and styling.",
-    deliverables: [
+    includes: [
       "Design concept development",
       "Space planning and layout direction",
       "Furniture recommendations",
@@ -71,7 +70,7 @@ const services = [
     text: "Expert interior design consulting in a flexible pay-as-you-go format.",
     summary:
       "Flexible design support for clients who need help with specific decisions. This is ideal for reviewing plans, selecting finishes, sourcing pieces, or troubleshooting design challenges without committing to a larger package.",
-    deliverables: [
+    includes: [
       "Hourly professional design guidance",
       "Furniture, finish, and decor input",
       "Floor plan or layout review",
@@ -607,11 +606,11 @@ export default function AtelierFormareHome() {
 
               <div className="mt-8">
                 <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-[#6e2c2c]">
-                  Deliverables
+                  Includes
                 </p>
 
                 <div className="mt-4 space-y-3">
-                  {selectedService.deliverables.map((item) => (
+                  {selectedService.includes.map((item) => (
                     <div
                       key={item}
                       className="border-l border-[#b8a996] pl-4 text-sm leading-6 text-black/75 transition-all duration-300 hover:border-[#6e2c2c] hover:pl-5"
