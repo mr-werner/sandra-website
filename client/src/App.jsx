@@ -48,9 +48,9 @@ function SocialLinks({ light = false }) {
 
   return (
     <div className="flex items-center gap-4 text-[22px]">
-      <a href="https://facebook.com" target="_blank" rel="noreferrer" aria-label="Facebook">
+      {/* <a href="https://facebook.com" target="_blank" rel="noreferrer" aria-label="Facebook">
         <FaFacebook style={{ color: iconColor }} />
-      </a>
+      </a> */}
 
       <a href={instagram_link} target="_blank" rel="noreferrer" aria-label="Instagram">
         <FaInstagram style={{ color: iconColor }} />
@@ -328,9 +328,74 @@ export default function AtelierFormareHome() {
           </div>
         </section>
 
-        
+
+        {/* SIGNATURE SPACES */}
+
+        <section id="work" className="px-4 py-14 md:px-6">
+          <div className="mx-auto max-w-[1180px]">
+            <p className="text-[13px] uppercase tracking-[0.28em] text-[#6e2c2c]">
+              Signature Spaces
+            </p>
+
+            <h2 className="mt-4 max-w-4xl text-4xl font-medium tracking-[-0.05em] md:text-6xl">
+              Timeless interiors designed with purpose.
+            </h2>
+
+            <div className="mt-10 grid gap-6 md:grid-cols-3">
+              {[
+                {
+                  title: "Warm & Collected Living Spaces",
+                  subtitle: "Full-Service Interior Design",
+                  image:
+                    "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=1200&q=80",
+                },
+                {
+                  title: "Refined Kitchens & Dining Areas",
+                  subtitle: "Renovation + Selection Support",
+                  image:
+                    "https://images.unsplash.com/photo-1484154218962-a197022b5858?w=1200&q=80",
+                },
+                {
+                  title: "Quiet Bedroom Retreats",
+                  subtitle: "Furnishing + Styling",
+                  image:
+                    "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=1200&q=80",
+                },
+              ].map((space) => (
+                <div key={space.title} className="group">
+                  <div className="overflow-hidden rounded-xl">
+                    <img
+                      src={space.image}
+                      alt={space.title}
+                      className="h-[340px] w-full object-cover transition duration-700 group-hover:scale-105"
+                    />
+                  </div>
+
+                  <h3 className="mt-5 text-2xl font-medium tracking-[-0.03em]">
+                    {space.title}
+                  </h3>
+
+                  <p className="mt-2 text-base text-black/55">
+                    {space.subtitle}
+                  </p>
+
+                  <button
+                    type="button"
+                    onClick={() => setShowInquiryForm(true)}
+                    className="mt-5 inline-flex items-center text-[12px] uppercase tracking-[0.18em] text-[#6e2c2c] transition-colors hover:text-black"
+                  >
+                    Discuss Similar Project →
+                  </button>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+
         {/* WORK */}
 
+        {/*
         <section id="work" className="px-4 py-14 md:px-6">
           <div className="mx-auto max-w-[1180px]">
             <div className="mb-8">
@@ -362,7 +427,7 @@ export default function AtelierFormareHome() {
             </div>
           </div>
         </section>
-
+ */}
         {/* ABOUT */}
 
         <section id="about" className="px-4 py-14 md:px-6">
