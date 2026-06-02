@@ -6,6 +6,7 @@ import logo_white from "./assets/Atelier-Formare-Colorado-Interior-Design-Logo-W
 import headshot from "./assets/Colorado-Interior-Design-Premiere-Consultant.jpg";
 import { FaInstagram } from "react-icons/fa";
 import { Helmet } from "react-helmet-async";
+import heroImage from "./assets/Colorado-Interior-Design-Hero.png";
 
 const instagram_link =
   "https://www.instagram.com/atelierformare?igsh=cjVnc2JyNmsycnBo";
@@ -269,7 +270,7 @@ export default function AtelierFormareHome() {
 
             <div className="relative min-h-[300px]">
               <img
-                src="./src/assets/Colorado-Interior-Design-Hero.png"
+                src={heroImage}
                 alt="Interior"
                 className="absolute inset-0 h-full w-full object-cover"
               />
