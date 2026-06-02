@@ -42,12 +42,10 @@ const services = [
     summary:
       "A refined refresh for spaces that need new energy without a complete redesign. This service focuses on improving what already exists while introducing thoughtful updates that make the room feel more complete.",
     includes: [
-      "Existing room review",
-      "Furniture placement recommendations",
-      "Styling and decor direction",
-      "Color and finish updates",
-      "Accessory and textile suggestions",
-      "Implementation guidance",
+      "Design Consultation +",
+      "Mood Board",
+      "Shopping List",
+      "Styling Recommendations"
     ],
   },
   {
@@ -56,14 +54,11 @@ const services = [
     summary:
       "A comprehensive room-focused design service for clients who want a polished and cohesive space. Every detail is considered, from the room’s purpose and flow to furnishings, finishes, lighting, and styling.",
     includes: [
-      "Design concept development",
-      "Space planning and layout direction",
-      "Furniture recommendations",
-      "Color palette development",
-      "Material and finish selections",
-      "Lighting and styling guidance",
-      "Decor and accessory direction",
-      "Final design presentation",
+      "Room Refresh +",
+      "Currated Shopping List with Links",
+      "Implementation Guide",
+      "Accurate Measurments",
+      "Design Revisions"
     ],
   },
   {
