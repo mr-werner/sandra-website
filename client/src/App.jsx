@@ -218,7 +218,7 @@ export default function AtelierFormareHome() {
         {/* HERO */}
 
         <section className="px-4 pb-10 pt-20 md:px-6">
-          <div className="mx-auto grid max-w-[1180px] overflow-hidden rounded-xl bg-[#d8cfc4] md:grid-cols-[1.2fr_0.8fr]">
+          <div className="mx-auto grid max-w-[1180px] overflow-hidden rounded-xl bg-[#d8cfc4] md:grid-cols-[1.05fr_0.95fr]">
             <div className="flex flex-col justify-center p-6 md:p-10">
               <img
                 src={logo}
@@ -269,7 +269,7 @@ export default function AtelierFormareHome() {
 
             <div className="relative min-h-[300px]">
               <img
-                src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?q=80&w=1300&auto=format&fit=crop"
+                src="./src/assets/Colorado-Interior-Design-Hero.png"
                 alt="Interior"
                 className="absolute inset-0 h-full w-full object-cover"
               />
