@@ -7,6 +7,9 @@ import headshot from "./assets/Colorado-Interior-Design-Premiere-Consultant.jpg"
 import { FaInstagram } from "react-icons/fa";
 import { Helmet } from "react-helmet-async";
 import heroImage from "./assets/Colorado-Interior-Design-Hero.png";
+import signaturespaceImage001 from "./assets/44e30318-6ba8-4d29-8340-d768d5b8a2a7.png";
+import signaturespaceImage002 from "./assets/e12b22e3-4e81-4e5c-aaaa-1fae6327da02.png";
+import signaturespaceImage003 from "./assets/7b3c3f40-e849-46a7-8a3a-bad9eb72816e.png";
 
 const instagram_link =
   "https://www.instagram.com/atelierformare?igsh=cjVnc2JyNmsycnBo";
@@ -142,7 +145,7 @@ export default function AtelierFormareHome() {
               </a>
 
               <a href="#work" className="hover:text-[#6e2c2c]">
-                Work
+                Design
               </a>
 
               <a href="#about" className="hover:text-[#6e2c2c]">
@@ -327,34 +330,32 @@ export default function AtelierFormareHome() {
             </p>
 
             <h2 className="mt-4 max-w-4xl text-4xl font-medium tracking-[-0.05em] md:text-6xl">
-              Timeless interiors designed with purpose.
+              {/* Timeless interiors designed with purpose. */}
+              Our Design Philosophy.
             </h2>
 
             <div className="mt-10 grid gap-6 md:grid-cols-3">
               {[
                 {
-                  title: "Warm & Collected Living Spaces",
-                  subtitle: "Full-Service Interior Design",
+                  title: "Simplicity",
+                  subtitle: "Calm, Intentional, & Uncluttered",
                   description:
-                    "Layered furnishings, natural materials, and thoughtful layouts designed for daily living.",
-                  image:
-                    "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=1200&q=80",
+                    "Every element is chosen with purpose, creating spaces that feel balanced, refined, and free from unnecessary complexity. The result is an environment that promotes clarity, ease, and a sense of calm.",
+                  image: signaturespaceImage001,
                 },
                 {
-                  title: "Refined Kitchens & Dining Areas",
-                  subtitle: "Renovation + Selection Support",
+                  title: "Comfort",
+                  subtitle: "Warm, Cohesive, & Liveable",
                   description:
-                    "Finish palettes, fixtures, surfaces, and selections that bring cohesion to the heart of the home.",
-                  image:
-                    "https://images.unsplash.com/photo-1484154218962-a197022b5858?w=1200&q=80",
+                    "Beautiful design should support the way you live. Thoughtful layouts, inviting materials, and cohesive details come together to create spaces that feel welcoming, functional, and effortlessly lived in.",
+                  image: signaturespaceImage002,
                 },
                 {
-                  title: "Quiet Bedroom Retreats",
-                  subtitle: "Furnishing + Styling",
+                  title: "Longevity",
+                  subtitle: "Thoughtful, Beautiful, & Timeless",
                   description:
-                    "Soft textures, calming palettes, and curated details that create restful, personal spaces.",
-                  image:
-                    "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=1200&q=80",
+                    "Design decisions are guided by enduring principles rather than fleeting trends. By prioritizing quality, craftsmanship, and timeless aesthetics, spaces remain relevant, beautiful, and meaningful for years to come.",
+                  image: signaturespaceImage003,
                 },
               ].map((space) => (
                 <div
@@ -386,7 +387,7 @@ export default function AtelierFormareHome() {
                     onClick={() => setShowInquiryForm(true)}
                     className="mt-5 inline-flex cursor-pointer items-center text-[12px] uppercase tracking-[0.18em] text-[#6e2c2c] transition-all duration-300 group-hover:translate-x-1 hover:text-black"
                   >
-                    Discuss Similar Project →
+                    Start a Project →
                   </button>
                 </div>
               ))}
