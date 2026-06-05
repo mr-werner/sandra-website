@@ -140,12 +140,13 @@ export default function AtelierFormareHome() {
             </a>
 
             <nav className="hidden items-center gap-6 text-[12px] uppercase tracking-[0.14em] text-black/65 md:flex">
-              <a href="#services" className="hover:text-[#6e2c2c]">
-                Services
-              </a>
 
               <a href="#work" className="hover:text-[#6e2c2c]">
                 Design
+              </a>
+
+              <a href="#services" className="hover:text-[#6e2c2c]">
+                Services
               </a>
 
               <a href="#about" className="hover:text-[#6e2c2c]">
@@ -175,19 +176,19 @@ export default function AtelierFormareHome() {
             <div className="border-t border-black/10 bg-[#f4f1ea] md:hidden">
               <nav className="mx-auto flex max-w-[1180px] flex-col px-4 py-4 text-[12px] uppercase tracking-[0.14em] text-black/65">
                 <a
+                  href="#work"
+                  className="py-3 hover:text-[#6e2c2c]"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Design
+                </a>
+
+                <a
                   href="#services"
                   className="py-3 hover:text-[#6e2c2c]"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   Services
-                </a>
-
-                <a
-                  href="#work"
-                  className="py-3 hover:text-[#6e2c2c]"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  Work
                 </a>
 
                 <a
@@ -258,11 +259,12 @@ export default function AtelierFormareHome() {
                 </button>
 
                 <a
-                  href="#work"
+                  href="#services"
                   className="rounded-full border border-black/20 px-5 py-3 text-xs uppercase tracking-[0.16em] text-black/70 hover:border-[#6e2c2c] hover:text-[#6e2c2c]"
                 >
-                  View work
+                  See Services
                 </a>
+
               </div>
             </div>
 
@@ -272,51 +274,6 @@ export default function AtelierFormareHome() {
                 alt="Interior"
                 className="absolute inset-0 h-full w-full object-cover"
               />
-            </div>
-          </div>
-        </section>
-
-        {/* SERVICES */}
-
-        <section id="services" className="px-4 py-14 md:px-6">
-          <div className="mx-auto max-w-[1180px]">
-            <p className="text-[13px] uppercase tracking-[0.28em] text-[#6e2c2c]">
-              Services
-            </p>
-
-            <div className="mt-4 grid gap-8 md:grid-cols-[0.8fr_1.2fr]">
-              <h2 className="text-3xl font-medium tracking-[-0.04em] md:text-5xl">
-                Design services tailored to the way you live.
-              </h2>
-
-              <p className="max-w-2xl text-base leading-7 text-black/65 md:pt-3">
-                From full-home design to smaller styling updates, each service
-                is built around creating a home that feels warm, functional,
-                collected, and deeply personal.
-              </p>
-            </div>
-
-            <div className="mt-10 grid gap-5 md:grid-cols-2">
-              {services.map((service) => (
-                <button
-                  key={service.title}
-                  type="button"
-                  onClick={() => setSelectedService(service)}
-                  className="group cursor-pointer border-t border-black/15 px-4 py-6 text-left transition-all duration-300 hover:-translate-y-1 hover:border-[#6e2c2c] hover:bg-[#d8cfc4]/60 hover:shadow-lg"
-                >
-                  <h3 className="text-2xl font-medium tracking-[-0.03em] transition-colors duration-300 group-hover:text-[#6e2c2c]">
-                    {service.title}
-                  </h3>
-
-                  <p className="mt-3 max-w-xl text-sm leading-6 text-black/60">
-                    {service.text}
-                  </p>
-
-                  <p className="mt-4 text-[11px] uppercase tracking-[0.18em] text-[#6e2c2c] opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-                    View Details →
-                  </p>
-                </button>
-              ))}
             </div>
           </div>
         </section>
@@ -395,6 +352,53 @@ export default function AtelierFormareHome() {
           </div>
         </section>
 
+        {/* SERVICES */}
+
+        <section id="services" className="px-4 py-14 md:px-6">
+          <div className="mx-auto max-w-[1180px]">
+            <p className="text-[13px] uppercase tracking-[0.28em] text-[#6e2c2c]">
+              Services
+            </p>
+
+            <div className="mt-4 grid gap-8 md:grid-cols-[0.8fr_1.2fr]">
+              <h2 className="text-3xl font-medium tracking-[-0.04em] md:text-5xl">
+                Design services tailored to the way you live.
+              </h2>
+
+              <p className="max-w-2xl text-base leading-7 text-black/65 md:pt-3">
+                From full-home design to smaller styling updates, each service
+                is built around creating a home that feels warm, functional,
+                collected, and deeply personal.
+              </p>
+            </div>
+
+            <div className="mt-10 grid gap-5 md:grid-cols-2">
+              {services.map((service) => (
+                <button
+                  key={service.title}
+                  type="button"
+                  onClick={() => setSelectedService(service)}
+                  className="group cursor-pointer border-t border-black/15 px-4 py-6 text-left transition-all duration-300 hover:-translate-y-1 hover:border-[#6e2c2c] hover:bg-[#d8cfc4]/60 hover:shadow-lg"
+                >
+                  <h3 className="text-2xl font-medium tracking-[-0.03em] transition-colors duration-300 group-hover:text-[#6e2c2c]">
+                    {service.title}
+                  </h3>
+
+                  <p className="mt-3 max-w-xl text-sm leading-6 text-black/60">
+                    {service.text}
+                  </p>
+
+                  <p className="mt-4 text-[11px] uppercase tracking-[0.18em] text-[#6e2c2c] opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                    View Details →
+                  </p>
+                </button>
+              ))}
+            </div>
+          </div>
+        </section>
+
+
+
         {/* ABOUT */}
 
         <section id="about" className="px-4 py-14 md:px-6">
@@ -403,43 +407,61 @@ export default function AtelierFormareHome() {
               <img
                 src={headshot}
                 alt="Designer portrait"
-                className="h-[620px] w-full object-cover object-[center_75%]"
+                className="h-full w-full object-cover object-[center_75%]"
               />
             </div>
 
             <div className="flex flex-col justify-center">
               <p className="text-[13px] uppercase tracking-[0.28em] text-[#6e2c2c]">
-                About Me
+                About Atelier Formare
               </p>
 
               <h2 className="mt-4 max-w-xl text-3xl font-medium tracking-[-0.04em] md:text-5xl">
-                Transforming ideas & spaces that not only look beautiful, but
-                feel like home.
+                A Journey Shaped Through Purpose
               </h2>
 
               <p className="mt-4 max-w-2xl text-base leading-7 text-black/65">
-                Design, is about more than aesthetics — it’s about creating
-                spaces that truly reflect the people who live in them.
+                Atelier Formare was founded on the belief that great design begins with
+                understanding people. That philosophy is rooted in the journey of its
+                founder, who grew up in a small village in Germany before moving
+                independently to the United States to pursue a degree in aerospace
+                engineering in a language that was not her own. Through years of
+                dedication and perseverance, she went on to contribute to historic space
+                programs and lead teams working on missions that demanded exceptional
+                precision, collaboration, and problem-solving.
               </p>
 
               <p className="mt-4 max-w-2xl text-base leading-7 text-black/65">
-                Originally from Germany with a background in aerospace
-                engineering, Sandra brings a unique balance of precision,
-                creativity, and human-centered design to every space she
-                touches.
+                While aerospace engineering provided the opportunity to contribute to
+                projects few people ever experience, it also revealed what mattered most.
+                Large programs often span many years, creativity can be constrained by
+                strict technical requirements, and the scale of the work can make it
+                difficult to see the direct impact on individual lives. Over time, she
+                discovered that what she found most fulfilling was the opportunity to
+                create, connect with people, and help them experience meaningful change
+                firsthand.
               </p>
 
               <p className="mt-4 max-w-2xl text-base leading-7 text-black/65">
-                Many clients come to her knowing they want something different,
-                but struggling to visualize what that looks like. Through
-                thoughtful collaboration and an intuitive understanding of
-                personality and lifestyle, she helps bridge the gap between
-                uncertainty and clarity.
+                Atelier Formare grew from that realization. It became an opportunity to
+                combine the precision and thoughtful problem-solving developed through
+                engineering with a lifelong passion for creativity and design. More
+                importantly, it created a way to work closely with people, helping them
+                transform the spaces they live in every day.
               </p>
 
               <p className="mt-4 max-w-2xl text-base leading-7 text-black/65">
-                The result is a design experience that feels approachable,
-                inspiring, and uniquely tailored to the people living in it.
+                Many clients arrive knowing they want their home to feel different but
+                struggle to define exactly what that means. Through thoughtful
+                collaboration, careful listening, and a refined design process, Atelier
+                Formare helps transform uncertainty into clarity—guiding clients toward
+                spaces that feel authentic, cohesive, and uniquely their own.
+              </p>
+
+              <p className="mt-4 max-w-2xl text-base leading-7 text-black/65">
+                The result is more than a beautifully designed room. It is a home that
+                feels intentional, welcoming, and deeply connected to the people who
+                live there.
               </p>
             </div>
           </div>
