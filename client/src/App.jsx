@@ -10,6 +10,8 @@ import heroImage from "./assets/Colorado-Interior-Design-Hero.png";
 import signaturespaceImage001 from "./assets/44e30318-6ba8-4d29-8340-d768d5b8a2a7.png";
 import signaturespaceImage002 from "./assets/e12b22e3-4e81-4e5c-aaaa-1fae6327da02.png";
 import signaturespaceImage003 from "./assets/7b3c3f40-e849-46a7-8a3a-bad9eb72816e.png";
+import { Turnstile } from "@marsidev/react-turnstile";
+
 
 const instagram_link =
   "https://www.instagram.com/atelierformare?igsh=cjVnc2JyNmsycnBo";
@@ -101,6 +103,8 @@ export default function AtelierFormareHome() {
   const [showInquiryForm, setShowInquiryForm] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [selectedService, setSelectedService] = useState(null);
+  const [turnstileToken, setTurnstileToken] = useState("");
+  const [formStartTime] = useState(Date.now());
 
   return (
     <>
@@ -696,6 +700,8 @@ export default function AtelierFormareHome() {
                     return;
                   }
 
+
+
                   const payload = {
                     name: formData.get("name"),
                     email: formData.get("email"),
@@ -706,6 +712,8 @@ export default function AtelierFormareHome() {
                     message: formData.get("message"),
                     humanCheck,
                     website: formData.get("website"),
+                    formStartTime: formData.get("formStartTime"),
+                    turnstileToken
                   };
 
                   try {
@@ -781,9 +789,6 @@ export default function AtelierFormareHome() {
                     <option value="Designer by the Hour">
                       Designer by the Hour
                     </option>
-                    <option value="Full-Service Interior Design">
-                      Full-Service Interior Design
-                    </option>
                     <option value="Not sure yet">Not sure yet</option>
                   </select>
 
@@ -819,9 +824,19 @@ export default function AtelierFormareHome() {
                   />
                 </label>
 
+                <input type="hidden" name="formStartTime" value={formStartTime} />
+
+                <Turnstile
+                  siteKey={import.meta.env.VITE_TURNSTILE_SITE_KEY}
+                  onSuccess={setTurnstileToken}
+                />
+
+                <input type="hidden" name="turnstileToken" value={turnstileToken} />
+
                 <button
                   type="submit"
                   className="mt-2 inline-flex w-fit items-center gap-2 rounded-full bg-[#797d5c] px-6 py-3 text-xs uppercase tracking-[0.16em] text-[#f4f1ea] hover:bg-[#565b43]"
+
                 >
                   Submit inquiry
                   <ArrowRight size={15} />
