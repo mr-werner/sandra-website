@@ -829,8 +829,8 @@ export default function AtelierFormareHome() {
                 <Turnstile
                   siteKey={import.meta.env.VITE_TURNSTILE_SITE_KEY}
                   onSuccess={(token) => setTurnstileToken(token)}
-                  onExpire={() => setTurnstileToken=""}
-                  onError={() => setTurnstileToken = ""}
+                  onExpire={() => setTurnstileToken=("")}
+                  onError={() => setTurnstileToken = ("")}
                 />
 
                 <input type="hidden" name="turnstileToken" value={turnstileToken} />

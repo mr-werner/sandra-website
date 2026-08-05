@@ -62,7 +62,8 @@ export default async function handler(req, res) {
     }
 
     const { data, error } = await resend.emails.send({
-      from: "Atelier Formare <onboarding@resend.dev>",
+      // from: "Atelier Formare <onboarding@resend.dev>",
+      from: "Atelier Formare <hello@atelierformare.com>",
       to: ["hello@atelierformare.com"],
       // to: ["mr.werner@proton.me"],
       replyTo: email,
