@@ -248,8 +248,7 @@ export default function AtelierFormareHome() {
                 specializing in modern, warm,
                 European/Scandinavian/Mediterranean-inspired residential
                 interiors. Locally serving in-person for many Colorado locations
-                like {local_work_locations_list} As well as worldwide clients
-                through virtual interior design consultations.
+                as well as worldwide clients through virtual interior design consultations.
               </p>
 
               <div className="mt-7 flex flex-wrap gap-3">
