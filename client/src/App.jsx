@@ -109,16 +109,44 @@ export default function AtelierFormareHome() {
   return (
     <>
       <Helmet>
-        <title>Atelier Formare | Interior Design Studio in Colorado</title>
+        <title>
+          Atelier Formare | Premier Interior Design Studio in Colorado
+        </title>
 
         <meta
           name="description"
           content="Modern European-inspired interior design studio serving Northern Colorado, Denver, Boulder, and clients nationwide through virtual consultations."
         />
 
+        <meta name="robots" content="index, follow" />
+
+        <link
+          rel="canonical"
+          href="https://atelierformare.com/"
+        />
+
         <meta
-          name="keywords"
-          content="Interior Designer Fort Collins, Northern Colorado Interior Design, Modern Interior Design Colorado, European Interior Design"
+          property="og:title"
+          content="Atelier Formare | Premier Interior Design Studio in Colorado"
+        />
+
+        <meta
+          property="og:description"
+          content="Modern European-inspired interior design studio serving Northern Colorado, Denver, Boulder, and clients nationwide through virtual consultations."
+        />
+
+        <meta
+          property="og:url"
+          content="https://atelierformare.com/"
+        />
+
+        <meta property="og:type" content="website" />
+
+        <meta property="og:site_name" content="Atelier Formare" />
+
+        <meta
+          name="twitter:card"
+          content="summary_large_image"
         />
       </Helmet>
 
