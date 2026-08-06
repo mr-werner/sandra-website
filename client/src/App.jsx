@@ -14,7 +14,7 @@ import { Turnstile } from "@marsidev/react-turnstile";
 
 
 const instagram_link =
-  "https://www.instagram.com/atelierformare?igsh=cjVnc2JyNmsycnBo";
+  "https://www.instagram.com/atelierformare/";
 
 const local_work_locations_list =
   "Aspen, Vail, Telluride, Cherry Hills, Castle Pines, Greenwood Village, Lone Tree, Superior, Louisville, Boulder, Golden, Denver, Longmont, Loveland, and Fort Collins.";
@@ -110,7 +110,7 @@ export default function AtelierFormareHome() {
     <>
       <Helmet>
         <title>
-          Atelier Formare | Premier Interior Design Studio in Colorado
+          Atelier Formare | Luxury Interior Design Studio in Colorado
         </title>
 
         <meta
@@ -148,6 +148,192 @@ export default function AtelierFormareHome() {
           name="twitter:card"
           content="summary_large_image"
         />
+
+        <meta
+          property="og:image"
+          content="https://atelierformare.com/og-image.png"
+        />
+
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+
+        <meta
+          property="og:image:alt"
+          content="European-inspired interior design by Atelier Formare"
+        />
+
+        <meta
+          name="twitter:image"
+          content="https://atelierformare.com/og-image.png"
+        />
+
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "HomeAndConstructionBusiness",
+            "@id": "https://atelierformare.com/#business",
+            name: "Atelier Formare",
+            url: "https://atelierformare.com/",
+            description:
+              "Modern European-inspired interior design studio serving Northern Colorado, Denver, Boulder, and clients nationwide through virtual consultations.",
+            image: "https://atelierformare.com/og-image.png",
+            logo: "https://atelierformare.com/logo.png",
+            email: "mailto:hello@atelierformare.com",
+            telephone: "+17208228497",
+            priceRange: "$$$",
+            areaServed: [
+              {
+                "@type": "AdministrativeArea",
+                name: "Northern Colorado",
+              },
+              {
+                "@type": "City",
+                name: "Fort Collins",
+              },
+              {
+                "@type": "City",
+                name: "Denver",
+              },
+              {
+                "@type": "City",
+                name: "Boulder",
+              },
+
+              {
+                "@type": "City",
+                name: "Aspen",
+              },
+
+              {
+                "@type": "City",
+                name: "Vail",
+              },
+
+              {
+                "@type": "City",
+                name: "Telluride",
+              },
+
+              {
+                "@type": "City",
+                name: "Cherry Hills",
+              },
+
+              {
+                "@type": "City",
+                name: "Castle Pines",
+              },
+
+              {
+                "@type": "City",
+                name: "Greenwood Village",
+              },
+
+              {
+                "@type": "City",
+                name: "Lone Tree",
+              },
+
+              {
+                "@type": "City",
+                name: "Superior",
+              },
+              {
+                "@type": "City",
+                name: "Louisville",
+              },
+              {
+                "@type": "City",
+                name: "Golden",
+              },
+
+              {
+                "@type": "City",
+                name: "Longmont",
+              },
+
+              {
+                "@type": "City",
+                name: "Loveland",
+              },
+
+              {
+                "@type": "Country",
+                name: "United States",
+              },
+            ],
+            sameAs: [
+              "https://www.instagram.com/atelierformare/"
+            ],
+            knowsAbout: [
+              "Residential interior design",
+              "European-inspired interior design",
+              "Modern interior design",
+              "Virtual interior design consultations",
+              "Space planning",
+              "Furniture and finish selection",
+            ],
+
+            hasOfferCatalog: {
+              "@type": "OfferCatalog",
+              name: "Interior Design Services",
+              itemListElement: [
+                {
+                  "@type": "Offer",
+                  itemOffered: {
+                    "@type": "Service",
+                    name: "Design Consultation",
+                  },
+                },
+                {
+                  "@type": "Offer",
+                  itemOffered: {
+                    "@type": "Service",
+                    name: "Room Refresh",
+                  },
+                },
+                {
+                  "@type": "Offer",
+                  itemOffered: {
+                    "@type": "Service",
+                    name: "Furniture and Finish Selection",
+                  },
+                },
+                {
+                  "@type": "Offer",
+                  itemOffered: {
+                    "@type": "Service",
+                    name: "Space Planning",
+                  },
+                },
+                {
+                  "@type": "Offer",
+                  itemOffered: {
+                    "@type": "Service",
+                    name: "Virtual Interior Design Consultation",
+                  },
+                },
+                {
+                  "@type": "Offer",
+                  itemOffered: {
+                    "@type": "Service",
+                    name: "Signature Room Design",
+                  },
+                },
+                {
+                  "@type": "Offer",
+                  itemOffered: {
+                    "@type": "Service",
+                    name: "Designer by the Hour",
+                  },
+                },
+              ],
+            },
+          })}
+        </script>
+
+
+
       </Helmet>
 
       <main
