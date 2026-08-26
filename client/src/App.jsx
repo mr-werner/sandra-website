@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./App.css";
 import { ArrowRight, Menu } from "lucide-react";
 import { motion } from "framer-motion";
 import logo from "./assets/Atelier-Formare-Colorado-Interior-Design-Logo.png";
@@ -11,7 +12,6 @@ import signaturespaceImage001 from "./assets/44e30318-6ba8-4d29-8340-d768d5b8a2a
 import signaturespaceImage002 from "./assets/e12b22e3-4e81-4e5c-aaaa-1fae6327da02.png";
 import signaturespaceImage003 from "./assets/7b3c3f40-e849-46a7-8a3a-bad9eb72816e.png";
 import { Turnstile } from "@marsidev/react-turnstile";
-
 
 const instagram_link =
   "https://www.instagram.com/atelierformare/";
@@ -790,7 +790,7 @@ export default function AtelierFormareHome() {
                   </p>
                 </div>
 
-                <div className="mt-6 flex items-end justify-between">
+                <div className="mt-6 flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
                   <div>
                     <p className="mb-4 text-xs uppercase tracking-[0.18em] text-white/45">
                       Follow Along
@@ -799,10 +799,24 @@ export default function AtelierFormareHome() {
                     <SocialLinks light />
                   </div>
 
-                  <p className="text-xs uppercase tracking-[0.18em] text-white/40">
-                    © 2026 Atelier Formare
-                  </p>
+                  <div className="flex flex-col items-start gap-1.5 sm:items-end">
+                    <p className="text-xs uppercase tracking-[0.18em] text-white/40">
+                      © 2026 Atelier Formare
+                    </p>
+
+                    <a
+                      href="https://blueprintwebstudio.com"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="blueprint-credit"
+                      aria-label="Website by Blueprint WebStudio"
+                    >
+                      <span className="blueprint-credit-logo" aria-hidden="true" />
+                      <span>Website by Blueprint WebStudio</span>
+                    </a>
+                  </div>
                 </div>
+
               </div>
             </div>
           </div>
